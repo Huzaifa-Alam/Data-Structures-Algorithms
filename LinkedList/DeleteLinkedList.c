@@ -23,6 +23,7 @@ struct node *deleteAll(struct node *head);
 int main()
 {
     int n = 0;
+    int i = 0;
     struct node *HEAD = NULL; // Initialize HEAD to NULL
     struct node *header = NULL; // Initialize HEAD to NULL
 
