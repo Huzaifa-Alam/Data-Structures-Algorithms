@@ -31,6 +31,7 @@ int main()
 
     // Add a node at the ending with data 6969
     HEAD = add_the_end(HEAD, 32);
+    HEAD = add_the_end(HEAD, 132);
         displayAll(HEAD);
     return 0;
 }
