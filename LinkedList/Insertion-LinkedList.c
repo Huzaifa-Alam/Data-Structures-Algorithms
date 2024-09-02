@@ -24,13 +24,13 @@ int main()
     displayAll(HEAD);
 
     // Add a node at the beginning with data 4324
-    HEAD = add_begin(HEAD, 4326);
-    HEAD = add_begin(HEAD, 4325);
-    HEAD = add_begin(HEAD, 4324);
+    HEAD = add_begin(HEAD, 142);
+    HEAD = add_begin(HEAD, 14);
+    HEAD = add_begin(HEAD, 432);
     displayAll(HEAD);
 
     // Add a node at the ending with data 6969
-    HEAD = add_the_end(HEAD, 6969);
+    HEAD = add_the_end(HEAD, 32);
         displayAll(HEAD);
     return 0;
 }
