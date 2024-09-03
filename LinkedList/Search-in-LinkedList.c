@@ -12,8 +12,8 @@ struct node *createLinkedList(int n) {
     struct node *head = NULL;
     struct node *temp = NULL;
     struct node *p = NULL;
-
-    for (int i = 0; i < n; i++) {
+    int i;
+    for (i = 0; i < n; i++) {
         temp = (struct node *)malloc(sizeof(struct node)); // Allocate memory for a new node
         printf("Enter value of node %d: ", i + 1);
         scanf("%d", &(temp->data));
@@ -48,7 +48,7 @@ void search(struct node *start, int item) {
 
 int main() {
     int n = 0;
-    struct node *start = NULL; // Initialize start to NULL
+    struct node *start = NULL;
 
     // Create the linked list
     printf("How many Nodes: \n");
