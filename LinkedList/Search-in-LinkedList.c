@@ -33,17 +33,17 @@ struct node *createLinkedList(int n) {
 }
 
 // FUNCTION TO SEARCH FOR AN ELEMENT IN THE LINKED LIST
-void search(struct node *start, int data) {
+void search(struct node *start, int item) {
     struct node *ptr = start;
 
     while (ptr != NULL) { // Traverse the list
-        if (ptr->data == data) { // Check if current node's data matches the data
-            printf("Successful search. Element %d found.\n", data);
+        if (ptr->data == item) { // Check if current node's data matches the data
+            printf("Successful search. Element %d found.\n", item);
             return;
         }
         ptr = ptr->next; // Move to the next node
     }
-    printf("Unsuccessful search. Element %d not found.\n", data);
+    printf("Unsuccessful search. Element %d not found.\n", item);
 }
 
 int main() {
