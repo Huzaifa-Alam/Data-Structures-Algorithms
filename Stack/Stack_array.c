@@ -52,19 +52,26 @@ void printStack() {
     printf("\n");
 }
 
-
+// Function to peek the top element of the stack
+int peek() {
+    if (isEmpty()) {
+        printf("Stack is empty.\n");
+        exit(1);  // Exit the program to avoid returning invalid data
+    }
+    return stackArr[top];
+}
 
 int main() {
     push(10);
     push(20);
     push(30);
 
-    // printStack();
+    printStack();
 
     pop();
     // printStack();
 
-    // printf("Top element is %d\n", peek());
+    printf("Top element is %d\n", peek());
 
     return 0;
 }
