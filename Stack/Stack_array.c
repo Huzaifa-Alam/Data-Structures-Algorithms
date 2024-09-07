@@ -39,6 +39,18 @@ int pop() {
     return poppedValue;
 }
 
+// Function to print all elements of the stack
+void printStack() {
+    if (isEmpty()) {
+        printf("Stack is empty.\n");
+        return;
+    }
+    printf("Stack elements: ");
+    for (int i = 0; i <= top; i++) {
+        printf("%d ", stackArr[i]);
+    }
+    printf("\n");
+}
 
 
 
@@ -56,5 +68,6 @@ int main() {
 
     return 0;
 }
+
 
 
