@@ -38,6 +38,14 @@ int pop() {
     printf("Popped %d from the stack.\n", poppedData);
     return poppedData;
 }
+// Function to peek the top element of the stack
+int peek() {
+    if (isEmpty()) {
+        printf("Stack is empty.\n");
+        exit(1);
+    }
+    return top->data;
+}
 
 // Function to print all elements of the stack
 void print() {
