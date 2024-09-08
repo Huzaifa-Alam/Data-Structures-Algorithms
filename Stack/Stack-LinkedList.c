@@ -25,7 +25,19 @@ void push(int data) {
     printf("Pushed %d onto the stack.\n", data);
 }
 
-
+// Function to pop an element from the stack
+int pop() {
+    if (isEmpty()) {
+        printf("Stack Underflow\n");
+        exit(1);
+    }
+    struct node* temp = top;
+    int poppedData = temp->data;
+    top = top->next;
+    free(temp);
+    printf("Popped %d from the stack.\n", poppedData);
+    return poppedData;
+}
 
 // Function to print all elements of the stack
 void print() {
