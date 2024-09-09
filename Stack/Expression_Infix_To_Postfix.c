@@ -32,7 +32,8 @@ int main()
 
 // Function to convert infix expression to postfix
 void inToPostfix() {
-    int i, j = 0;
+    int i = 0;
+    int j = 0 ;
     char symbol, next;
 
     for (i = 0; i < strlen(infix); i++) {
