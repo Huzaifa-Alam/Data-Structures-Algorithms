@@ -82,6 +82,11 @@ int space(char c)
 {
     return (c == ' ' || c == '\t');
 }
+// Function to check if the stack is empty
+int isempty()
+{
+    return (top == -1);
+}
 
 
 // Function to determine the precedence of operators
