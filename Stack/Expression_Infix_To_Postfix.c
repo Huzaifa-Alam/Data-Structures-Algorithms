@@ -77,6 +77,12 @@ void inToPostfix() {
 }
 
 
+// Function to check if the character is a space or tab
+int space(char c)
+{
+    return (c == ' ' || c == '\t');
+}
+
 
 // Function to determine the precedence of operators
 int precedence(char c)
