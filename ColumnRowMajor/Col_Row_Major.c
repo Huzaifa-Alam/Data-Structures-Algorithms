@@ -30,8 +30,30 @@ int main() {
         }
         printf("\n"); // Newline after printing one column's values
     }
+    
+    // Example matrix
+    int matrix1[3][3] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} }; 
 
+    // Random access in row-major order
+    printf("Random access in row-major order:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            // Using row-major formula to access elements randomly
+            printf("Element at [%d][%d] = %d, Address = %p\n", i, j, matrix1[i][j], &matrix1[i][j]);
+        }
+    }
 
+    printf("\n");
+
+    // Random access in column-major order (by swapping loops)
+    printf("Random access in column-major order:\n");
+    for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < rows; i++) {
+            // Using column-major logic to access elements randomly
+            printf("Element at [%d][%d] = %d, Address = %p\n", i, j, matrix1[i][j], &matrix1[i][j]);
+        }
+    }
+    
     
     return 0;
 }
