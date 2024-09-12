@@ -26,6 +26,35 @@ TreeNode *createTreeNode(void *data)
     return newNode;
 }
 
+
+// Function to print the tree (assuming the data is an integer)
+void printTree(TreeNode *root)
+{
+    if (root == NULL)
+        return;
+
+    // Print current node data (assuming int type)
+    printf("%d: ", *(int *)(root->data));
+    TreeNode *child = root->children;
+
+    // Print children data
+    while (child)
+    {
+        printf("%d, ", *(int *)(child->data));
+        child = child->nextSibling;
+    }
+    printf("\n");
+
+    // Recursively print each child
+    child = root->children;
+    while (child)
+    {
+        printTree(child);
+        child = child->nextSibling;
+    }
+}
+
+
 // Function to add a child to a tree node
 void addChild(TreeNode *parent, TreeNode *child)
 {
@@ -62,6 +91,7 @@ int main()
     addChild(node1, node4);
     addChild(node2, node5);
 
+    printTree(root);
     // Free memory
     free(node5);
     free(node4);
