@@ -16,6 +16,15 @@ int isOperator(char c)
     return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^');
 }
 
+// Function to perform inorder traversal of the tree
+void inorderTraversal(struct ExpressionTreeNode *root){
+    if (root == NULL){
+        return; // Exit if the tree is empty
+    }
+    inorderTraversal(root->leftChild); // Traverse the left subtree
+    printf("%c ", root->c); // Print the character in the node
+    inorderTraversal(root->rightChild); // Traverse the right subtree
+}
 
 int main()
 {
