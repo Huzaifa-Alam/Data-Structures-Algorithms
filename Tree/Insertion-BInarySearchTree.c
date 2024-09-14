@@ -45,6 +45,16 @@ void inOrder(struct BST *root) {
     inOrder(root->right);              // Traverse the right subtree
 }
 
+// Preorder Traversal
+void preOrder(struct BST *root) {
+    if (root == NULL) {
+        return;
+    }
+    printf("%d, ", root->data);        // Visit the current node
+    preOrder(root->left);              // Traverse the left subtree
+    preOrder(root->right);             // Traverse the right subtree
+}
+
 
 int main() {
     int user;
@@ -66,6 +76,11 @@ int main() {
     printf("Inorder traversal of Binary tree: ");
     inOrder(root);
     printf("\n");
+
+        printf("Preorder traversal of Binary tree: ");
+    preOrder(root);
+    printf("\n");
+
 
     return 0;
 }
