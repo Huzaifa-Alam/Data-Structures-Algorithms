@@ -30,6 +30,22 @@ int MinInBst(struct BinaryTreeNode *root)
 
 // Maximum Value in Binary Search tree
 
+int MaxInBst(struct BinaryTreeNode *root)
+{
+    if (root == NULL)
+    {
+        printf("Tree is empty.\n");
+        return -1; // Indicate error
+    }
+    struct BinaryTreeNode *temp = root;
+    while (temp->right != NULL) // Fix the condition
+    {
+        temp = temp->right;
+    }
+    return temp->data;
+}
+    
+
 // Function to create a new node
 struct BinaryTreeNode *createNode(int data)
 {
@@ -96,6 +112,7 @@ int main()
     printf("\n");
 
      printf("Minimum of Binary Search tree: %d \n", MinInBst(root));
+     printf("Maximum of Binary Search tree: %d \n", MaxInBst(root));
 
     return 0;
 }
