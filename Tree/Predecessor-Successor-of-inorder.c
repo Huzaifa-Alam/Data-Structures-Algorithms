@@ -24,7 +24,17 @@ int inOrderPredecessor(struct BinaryTreeNode* root) {
     return temp->data;
 }
 
-
+//lowest number of right sub tree of root node
+int inOrderSuccessor(struct BinaryTreeNode* root) {
+    struct BinaryTreeNode * temp = root->right;
+    if (root == NULL || root->right == NULL) {  // Check both root and root->right
+        return -1;  // No Successor
+    }
+    while(temp->left != NULL) {
+        temp = temp -> left;
+    }
+    return temp->data;
+}
 
 
 // Function to create a new node
@@ -108,7 +118,7 @@ int main()
     printf("Root %d \n",*root);
 
     printf("inOrder Predecessor of Binary Search tree: %d\n", inOrderPredecessor(root));
-    // printf("inOrder Successor of Binary Search tree: %d\n", inOrderSuccessor(root));
+    printf("inOrder Successor of Binary Search tree: %d\n", inOrderSuccessor(root));
 
     return 0;
 }
