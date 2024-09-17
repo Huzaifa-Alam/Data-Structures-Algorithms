@@ -12,6 +12,19 @@ struct BinaryTreeNode
 // Global root for the BST
 struct BinaryTreeNode *root = NULL;
 
+//highest number of left sub tree of root node 
+int inOrderPredecessor(struct BinaryTreeNode* root) {
+    struct BinaryTreeNode * temp = root->left;
+    if (root == NULL || root->left == NULL) {  // Check both root and root->left
+        return -1;  // No predecessor
+    }
+    while(temp->right != NULL) {
+        temp = temp -> right;
+    }
+    return temp->data;
+}
+
+
 
 
 // Function to create a new node
@@ -94,7 +107,7 @@ int main()
 
     printf("Root %d \n",*root);
 
-    // printf("inOrder Predecessor of Binary Search tree: %d\n", inOrderPredecessor(root));
+    printf("inOrder Predecessor of Binary Search tree: %d\n", inOrderPredecessor(root));
     // printf("inOrder Successor of Binary Search tree: %d\n", inOrderSuccessor(root));
 
     return 0;
