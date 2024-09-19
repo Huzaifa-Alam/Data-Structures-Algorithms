@@ -13,7 +13,21 @@ void displayAll(struct node *head);
 struct node* ReverseLinkedList(struct node *head);
 
 
+// Function of ReverseLinkedList
+struct node* ReverseLinkedList(struct node *head){
+    struct node *prev = NULL;
+    struct node *current = head;
+    struct node *after;
 
+    while (current != NULL){
+        after = current->next;
+        current->next = prev;
+        prev = current;
+        current = after;
+    }
+    head =prev;
+    return head;
+}
 
 
 int main() {
@@ -27,9 +41,9 @@ int main() {
     displayAll(HEAD);
 
     // Reverse the linked list
-    // HEAD = ReverseLinkedList(HEAD);
-    // printf("Reversed Linked List \n ");
-    // displayAll(HEAD);
+    HEAD = ReverseLinkedList(HEAD);
+    printf("Reversed Linked List \n ");
+    displayAll(HEAD);
 
     return 0;
 }
