@@ -10,11 +10,31 @@ struct node {
 // Function prototypes
 struct node* createLinkedList(int n);
 void displayAll(struct node *head);
-struct node* ReverseLinkedList(struct node *head);
+struct node* ReverseLinkedListiterative(struct node *head);
+struct node* ReverseLinkedListRecursive(struct node *head);
 
 
-// Function of ReverseLinkedList
-struct node* ReverseLinkedList(struct node *head){
+// Function to reverse the Linked List using a recursive approach
+struct node* ReverseLinkedListRecursive(struct node* head) {
+    // Base case: if head is NULL or there's only one element, return head
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    
+    // Recursively reverse the rest of the list
+    struct node* newHead = ReverseLinkedListRecursive(head->next);
+    
+    // Adjust the pointers
+    head->next->next = head;
+    head->next = NULL;
+    
+    // Return the new head of the reversed list
+    return newHead;
+}
+
+
+// Function of ReverseLinkedList Iterative Approach
+struct node* ReverseLinkedListiterative(struct node *head){
     struct node *prev = NULL;
     struct node *current = head;
     struct node *after;
@@ -40,11 +60,20 @@ int main() {
     HEAD = createLinkedList(n);
     displayAll(HEAD);
 
-    // Reverse the linked list
-    HEAD = ReverseLinkedList(HEAD);
-    printf("Reversed Linked List \n ");
+    // Reverse the linked list Iterative Approach
+    HEAD = ReverseLinkedListiterative(HEAD);
+    printf("Reversed Linked List Iterative Approach \n ");
     displayAll(HEAD);
 
+    // Reverse the linked list Recursive Approach
+    HEAD = ReverseLinkedListRecursive(HEAD);
+    printf("Again reaches Original LinkedList Using Recursive Approach \n ");
+    displayAll(HEAD);
+
+    // Reverse the linked list Recursive Approach
+    HEAD = ReverseLinkedListRecursive(HEAD);
+    printf("Reverse LinkedList Using Recursive Approach \n ");
+    displayAll(HEAD);
     return 0;
 }
 
