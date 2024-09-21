@@ -141,6 +141,7 @@ int main() {
     root = insert(root, 0);
     root = insert(root, 6);
     root = insert(root, 11);
+    root = insert(root, 15);
     root = insert(root, -1);
     root = insert(root, 1);
 
