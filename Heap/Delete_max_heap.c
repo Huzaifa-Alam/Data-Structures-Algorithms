@@ -201,7 +201,13 @@ void print()
 int main()
 {
     // Inserting elements into the heap
-   
+    insertHeap(30);
+    insertHeap(32);
+    insertHeap(12);
+    insertHeap(40);
+    insertHeap(42);
+    insertHeap(99);
+
     print(); // Print heap before deletion
     deletefromHeap(); // Delete the root element from the heap
     print(); // Print heap after deletion
