@@ -207,6 +207,7 @@ int main()
     insertHeap(40);
     insertHeap(42);
     insertHeap(99);
+    insertHeap(123);
 
     print(); // Print heap before deletion
     deletefromHeap(); // Delete the root element from the heap
