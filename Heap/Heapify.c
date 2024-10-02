@@ -48,9 +48,6 @@ int main() {
     }
 
     printf("Max heap: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", array[i]);
-    }
-    printf("\n");
+    printArray(array, size);
     return 0;
 }
